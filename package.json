@@ -1,0 +1,36 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src",
+    "start": "babel-node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:reset": "yarn db:reset-tag-metadata && yarn db:reset-event-types && yarn db:reset-user-data",
+    "db:reset-event-types": "docker exec -it mongo mongo localhost:27017/bpeap /app/scripts/reset-event-types.js",
+    "db:reset-tag-metadata": "docker exec -it mongo mongo localhost:27017/bpeap /app/scripts/reset-tag-metadata.js",
+    "db:reset-user-data": "docker exec -it mongo mongo localhost:27017/bpeap /app/scripts/reset-user-data.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "mongodb": "^3.2.2",
+    "morgan": "^1.9.1",
+    "ramda": "^0.26.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.2.2",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2"
+  }
+}
