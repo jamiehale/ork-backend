@@ -8,11 +8,11 @@ const readCampaigns = db => () => db.collection('campaigns')
 const readCampaign = db => id => db.collection('campaigns')
   .findOne({ _id: new ObjectId(id) });
 
-const createCampaign = db => dashboard => db.collection('dashboards')
-  .insertOne(dashboard)
+const createCampaign = db => campaign => db.collection('campaigns')
+  .insertOne(campaign)
   .then(result => result.ops[0]);
 
-const updateCampaign = db => (id, fields) => db.collection('dashboards')
+const updateCampaign = db => (id, fields) => db.collection('campaigns')
   .findOneAndUpdate({
     _id: new ObjectId(id),
   }, {
