@@ -2,6 +2,8 @@ import { config } from 'dotenv';
 import createApp from './app';
 import connectRepository from './db';
 
+/* eslint-disable no-console */
+
 config();
 
 const {
@@ -18,10 +20,10 @@ const run = () => {
   connectRepository(MONGO_URL, MONGO_DB)
     .then((repository) => {
       createApp(repository)
-        .listen(PORT, () => console.log(`Listening on port ${PORT}`)); // eslint-disable-line no-console
+        .listen(PORT, () => console.log(`Listening on port ${PORT}`));
     })
     .catch((error) => {
-      console.log(error); // eslint-disable-line no-console
+      console.log(error);
       process.exit(-1);
     });
 };
