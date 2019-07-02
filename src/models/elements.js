@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import { rename } from './util';
 
-const elementFields = ['id', 'name', 'description', 'campaignId'];
+const elementFields = ['id', 'name', 'type', 'description', 'campaignId'];
 
 export const elementModel = R.pick(elementFields);
 

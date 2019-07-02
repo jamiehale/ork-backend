@@ -1,7 +1,3 @@
 PORT=8080
-MONGO_URL=mongodb://localhost:27017/bpeap
-MONGO_DB=bpeap
-DRUID_QUERY_HOST=
-DRUID_BROKER_PORT=8082
-MOT_DATASOURCE=mot3
-PI_DATASOURCE=pi2
+MONGO_URL=mongodb://localhost:27017/ork
+MONGO_DB=ork
